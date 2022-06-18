@@ -18,30 +18,65 @@ namespace Ejercicio_1._1
 
         private async void btnSumar_Clicked(object sender, EventArgs e)
         {
-            Double total = 0;
-            total = Double.Parse(txtnumero1.Text) + Double.Parse(txtnumero2.Text);
-            await Navigation.PushAsync(new resultado(total.ToString()));
+            try
+            {
+                Double total = 0;
+                total = Double.Parse(txtnumero1.Text) + Double.Parse(txtnumero2.Text);
+                await Navigation.PushAsync(new resultado(total.ToString()));
+            }
+            catch
+            {
+               await DisplayAlert("Aviso", "Favor ingresar los 2 numeros solicitados", "OK");
+            }
+          
         }
 
         private async void btnRestar_Clicked(object sender, EventArgs e)
         {
-            Double total = 0;
-            total = Double.Parse(txtnumero1.Text) - Double.Parse(txtnumero2.Text);
-            await Navigation.PushAsync(new resultado(total.ToString()));
+            try
+            {
+                Double total = 0;
+                total = Double.Parse(txtnumero1.Text) - Double.Parse(txtnumero2.Text);
+                await Navigation.PushAsync(new resultado(total.ToString()));
+            }
+           
+
+              catch
+            {
+                await DisplayAlert("Aviso", "Favor ingresar los 2 numeros solicitados", "OK");
+            }
         }
 
         private async void btnDividir_Clicked(object sender, EventArgs e)
         {
-            Double total = 0;
-            total = Double.Parse(txtnumero1.Text) / Double.Parse(txtnumero2.Text);
-            await Navigation.PushAsync(new resultado(total.ToString()));
+            try
+            {
+                Double total = 0;
+                total = Double.Parse(txtnumero1.Text) / Double.Parse(txtnumero2.Text);
+                await Navigation.PushAsync(new resultado(total.ToString()));
+            }
+            catch
+            {
+                await DisplayAlert("Aviso", "Favor ingresar los 2 numeros solicitados", "OK");
+            }
+
+
         }
 
         private async void btnMultiplicar_Clicked(object sender, EventArgs e)
         {
-            Double total = 0;
-            total = Double.Parse(txtnumero1.Text) * Double.Parse(txtnumero2.Text);
-            await Navigation.PushAsync(new resultado(total.ToString()));
+            try
+            {
+                Double total = 0;
+                total = Double.Parse(txtnumero1.Text) * Double.Parse(txtnumero2.Text);
+                await Navigation.PushAsync(new resultado(total.ToString()));
+            }
+
+
+             catch
+            {
+                await DisplayAlert("Aviso", "Favor ingresar los 2 numeros solicitados", "OK");
+            }
         }
     }
 }
